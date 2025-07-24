@@ -1,11 +1,11 @@
-const express = require("express"); // Import Express framework
-const {
+import express from "express"; // Import Express framework
+import {
   getAllProducts,
   getProductById,
   addProduct,
   deleteProduct,
   updateProduct
-} = require("../Controllers/productController"); // Import product controller functions
+} from "../Controllers/productController.js"; // Import product controller functions
 
 const router = express.Router(); // Create a new router instance
 
@@ -25,4 +25,4 @@ router.delete("/:id", deleteProduct);
 router.put("/:id", updateProduct);
 
 // Export the router to be used in the main app
-module.exports = router;
+export default router;

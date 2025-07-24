@@ -1,6 +1,6 @@
-const express = require("express"); // Import Express framework
-const auth = require("../middlewares/authMiddleware"); // Import authentication middleware
-const { addToCart, updateCartItem, removeFromCart, viewCart } = require("../Controllers/cartController"); // Import cart controller functions
+import express from "express"; // Import Express framework
+import auth from "../middlewares/authMiddleware.js"; // Import authentication middleware
+import { addToCart, updateCartItem, removeFromCart, viewCart } from "../Controllers/cartController.js"; // Import cart controller functions
 
 const router = express.Router(); // Create a new router instance
 
@@ -17,4 +17,4 @@ router.put("/", auth, updateCartItem);
 router.delete("/", auth, removeFromCart);
 
 // Export the router to be used in the main app
-module.exports = router;
+export default router;

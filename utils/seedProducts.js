@@ -1,5 +1,5 @@
 // seedProducts.js - Adds dummy product data to MongoDB
-const Product = require("../models/Product");
+import Product from "../models/Product.js";
 
 const seedProducts = async () => {
  const products = [
@@ -78,4 +78,4 @@ const seedProducts = async () => {
   }
 };
 
-module.exports = seedProducts;
+export default seedProducts;

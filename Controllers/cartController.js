@@ -1,8 +1,8 @@
-const Cart = require("../models/Cart"); // Import Cart model
-const Product = require("../models/Product"); // Import Product model
+import Cart from "../models/Cart.js"; // Import Cart model
+import Product from "../models/Product.js"; // Import Product model
 
 // Add an item to the user's cart
-exports.addToCart = async (req, res, next) => {
+export const addToCart = async (req, res, next) => {
   try {
     const { productId, quantity } = req.body; // Extract productId and quantity from request body
 
@@ -39,7 +39,7 @@ exports.addToCart = async (req, res, next) => {
 };
 
 // View the current user's cart
-exports.viewCart = async (req, res, next) => {
+export const viewCart = async (req, res, next) => {
   try {
     const userId = req.user.userId; // Get userId from JWT middleware
 
@@ -62,7 +62,7 @@ exports.viewCart = async (req, res, next) => {
 };
 
 // Update quantity of a specific item in the cart
-exports.updateCartItem = async (req, res, next) => {
+export const updateCartItem = async (req, res, next) => {
   try {
     const { productId, quantity } = req.body;
 
@@ -88,7 +88,7 @@ exports.updateCartItem = async (req, res, next) => {
 };
 
 // Remove an item from the cart
-exports.removeFromCart = async (req, res, next) => {
+export const removeFromCart = async (req, res, next) => {
   try {
     const { productId } = req.body;
 

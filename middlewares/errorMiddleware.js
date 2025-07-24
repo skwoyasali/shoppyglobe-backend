@@ -1,5 +1,5 @@
 // Global error-handling middleware function
-module.exports = (err, req, res, next) => {
+ export default (err, req, res, next) => {
   // Log the full error stack trace to the console for debugging
   console.error(err.stack);
 

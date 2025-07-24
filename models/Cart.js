@@ -1,4 +1,4 @@
-const mongoose = require("mongoose"); // Import Mongoose for schema creation
+import mongoose from "mongoose"; // Import Mongoose for schema creation
 
 // Define the schema for the Cart model
 const cartSchema = new mongoose.Schema({
@@ -18,4 +18,6 @@ const cartSchema = new mongoose.Schema({
 });
 
 // Export the Cart model using the defined schema
-module.exports = mongoose.model("Cart", cartSchema);
+const Cart = mongoose.model("Cart", cartSchema);
+
+export default Cart;

@@ -1,18 +1,18 @@
-const express = require("express"); // Import Express framework
-const mongoose = require("mongoose"); // Import Mongoose for MongoDB connection
-const dotenv = require("dotenv"); // Import dotenv to load environment variables
-const cors = require("cors"); // Import CORS for handling cross-origin requests
+import express from "express"; // Import Express framework
+import mongoose from "mongoose"; // Import Mongoose for MongoDB connection
+import dotenv from "dotenv"; // Import dotenv to load environment variables
+import cors from "cors"; // Import CORS for handling cross-origin requests
 
 // Import route handlers
-const productRoutes = require("./routes/productRoutes");
-const cartRoutes = require("./routes/cartRoutes");
-const authRoutes = require("./routes/authRoutes");
+import productRoutes from "./routes/productRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 // Import error-handling middleware
-const errorHandler = require("./middlewares/errorMiddleware");
+import errorHandler from "./middlewares/errorMiddleware.js";
 
 // Import seed function to populate initial products
-const seedProducts = require("./utils/seedProducts");
+import seedProducts from "./utils/seedProducts.js";
 
 // Load environment variables from .env file
 dotenv.config();

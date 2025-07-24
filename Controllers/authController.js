@@ -1,10 +1,10 @@
 // Importing required modules
-const jwt = require("jsonwebtoken"); // For generating and verifying JWT tokens
-const bcrypt = require("bcryptjs"); // For hashing and comparing passwords
-const User = require("../models/User"); // Importing the User model
+import jwt from "jsonwebtoken"; // For generating and verifying JWT tokens
+import bcrypt from "bcryptjs"; // For hashing and comparing passwords
+import User from "../models/User.js"; // Importing the User model
 
 // Register controller to create a new user
-exports.register = async (req, res, next) => {
+export const register = async (req, res, next) => {
   try {
     // Extract name, email, and password from request body
     const { name, email, password } = req.body;
@@ -28,7 +28,7 @@ exports.register = async (req, res, next) => {
 };
 
 // Login controller to authenticate a user
-exports.login = async (req, res, next) => {
+export const login = async (req, res, next) => {
   try {
     // Extract email and password from request body
     const { email, password } = req.body;

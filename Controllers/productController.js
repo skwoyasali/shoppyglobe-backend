@@ -1,7 +1,7 @@
-const Product = require("../models/Product"); // Import Product model
+import Product from "../models/Product.js"; // Import Product model
 
 // Add a new product to the database
-exports.addProduct = async (req, res, next) => {
+export const addProduct = async (req, res, next) => {
   try {
     // Extract fields from request body
     const { name, price, description, stock } = req.body;
@@ -25,7 +25,7 @@ exports.addProduct = async (req, res, next) => {
 };
 
 // Fetch all products
-exports.getAllProducts = async (req, res, next) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     // Find all product documents
     const products = await Product.find();
@@ -38,7 +38,7 @@ exports.getAllProducts = async (req, res, next) => {
 };
 
 // Fetch a single product by ID
-exports.getProductById = async (req, res, next) => {
+export const getProductById = async (req, res, next) => {
   try {
     // Get product by ID from request parameters
     const product = await Product.findById(req.params.id);
@@ -54,7 +54,7 @@ exports.getProductById = async (req, res, next) => {
 };
 
 // Update an existing product by ID
-exports.updateProduct = async (req, res, next) => {
+export const updateProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
     const { name, price, description, stock } = req.body;
@@ -85,7 +85,7 @@ exports.updateProduct = async (req, res, next) => {
 };
 
 // Delete a product by ID
-exports.deleteProduct = async (req, res, next) => {
+export const deleteProduct = async (req, res, next) => {
   try {
     const id = req.params.id;
 
